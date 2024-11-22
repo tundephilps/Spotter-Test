@@ -5,4 +5,4 @@ TO RUN:
 3. Run "npm run dev" in the terminal
 
 DESCRIPTION;
-A CRM Dashbaord
+Google Flight Clone
