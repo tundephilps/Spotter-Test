@@ -4,10 +4,6 @@ import { SingleDatePicker } from "react-google-flight-datepicker";
 
 import "react-google-flight-datepicker/dist/main.css";
 
-MulticityDatepicker.propTypes = {
-  onDateChange: PropTypes.func.isRequired,
-};
-
 export const MulticityDatepicker = ({ onDateChange }) => {
   const [selectedDates, setSelectedDates] = useState({
     startDate: new Date(),
@@ -37,4 +33,7 @@ export const MulticityDatepicker = ({ onDateChange }) => {
       />
     </div>
   );
+};
+MulticityDatepicker.propTypes = {
+  onDateChange: PropTypes.func.isRequired,
 };

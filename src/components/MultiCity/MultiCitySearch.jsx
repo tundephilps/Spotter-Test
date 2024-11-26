@@ -3,11 +3,6 @@ import { IoMdAirplane, IoMdSwap } from "react-icons/io";
 // import { IoCloseCircle } from "react-icons/io5";
 import PropTypes from "prop-types";
 
-MultiCitySearch.propTypes = {
-  onOriginChange: PropTypes.func.isRequired,
-  onDestinationChange: PropTypes.func.isRequired,
-};
-
 export const MultiCitySearch = ({ onOriginChange, onDestinationChange }) => {
   const [cities] = useState([
     { city: "Brisbane", code: "BNE", country: "Australia" },
@@ -146,4 +141,8 @@ export const MultiCitySearch = ({ onOriginChange, onDestinationChange }) => {
       )}
     </div>
   );
+};
+MultiCitySearch.propTypes = {
+  onOriginChange: PropTypes.func.isRequired,
+  onDestinationChange: PropTypes.func.isRequired,
 };

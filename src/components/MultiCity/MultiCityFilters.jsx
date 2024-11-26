@@ -1,12 +1,6 @@
-import MultiCitySearch from "./MultiCitySearch";
-import MulticityDatepicker from "./MulticityDatepicker";
-import PropTypes from 'prop-types';
-
-MultiCityFilters.propTypes = {
-  onOriginChange: PropTypes.func.isRequired,
-  onDestinationChange: PropTypes.func.isRequired,
-  onDateChange: PropTypes.func.isRequired,
-};
+import { MultiCitySearch } from "./MultiCitySearch";
+import { MulticityDatepicker } from "./MulticityDatepicker";
+import PropTypes from "prop-types";
 
 export const MultiCityFilters = ({
   onOriginChange,
@@ -28,4 +22,10 @@ export const MultiCityFilters = ({
       </button>
     </div>
   );
+};
+
+MultiCityFilters.propTypes = {
+  onOriginChange: PropTypes.func.isRequired,
+  onDestinationChange: PropTypes.func.isRequired,
+  onDateChange: PropTypes.func.isRequired,
 };
