@@ -1,10 +1,7 @@
 import Flight from "../assets/flight.jpg";
-import React, { useState } from "react";
-import TripSelector from "../components/TripSelector";
+import { useState } from "react";
 import PassengerSelector from "../components/PassengerSelector";
 import ClassSelector from "../components/ClassSelector";
-import CitySearch from "../components/CitySearch";
-import DatePicker from "../components/DatePicker";
 import MultiCityFilters from "../components/MultiCity/MultiCityFilters";
 import RoundtripFilter from "../components/RoundTrip/RoundtripFilter";
 import OneWayFilter from "../components/OneWay/OneWayFilter";
@@ -15,6 +12,13 @@ import { Link } from "react-router-dom";
 const Homepage = () => {
   const [selectedOption, setSelectedOption] = useState("Multi-city");
   const [isOpen, setIsOpen] = useState(false);
+  const [flights, setFlights] = useState([]);
+  const [origin, setOrigin] = useState("");
+  const [destination, setDestination] = useState("");
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date());
+  const [adults, setAdults] = useState(1);
+  const [travelClass, setTravelClass] = useState("Economy");
 
   const options = ["Round trip", "One way", "Multi-city"];
 
@@ -23,11 +27,38 @@ const Homepage = () => {
     setIsOpen(false);
   };
 
+  const handleOriginChange = (origin) => {
+    setOrigin(origin);
+  };
+
+  const handleDestinationChange = (destination) => {
+    setDestination(destination);
+  };
+
+  const handleDateChange = (startDate, endDate) => {
+    setStartDate(startDate);
+    setEndDate(endDate);
+  };
+
+  const handleAdultsChange = (adults) => {
+    setAdults(adults);
+  };
+
+  const handleClassChange = (travelClass) => {
+    setTravelClass(travelClass);
+  };
+
   // Function to render the appropriate filter component
   const renderFilterComponent = () => {
     switch (selectedOption) {
       case "Multi-city":
-        return <MultiCityFilters />;
+        return (
+          <MultiCityFilters
+            onOriginChange={handleOriginChange}
+            onDestinationChange={handleDestinationChange}
+            onDateChange={handleDateChange}
+          />
+        );
       case "One way":
         return <OneWayFilter />;
       case "Round trip":

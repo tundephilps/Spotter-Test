@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import useState from "react";
 import { FaChevronDown, FaChevronUp, FaUser } from "react-icons/fa";
 
 function PassengerSelector() {

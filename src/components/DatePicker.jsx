@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import useState from "react";
 import { RangeDatePicker } from "react-google-flight-datepicker";
 import "react-google-flight-datepicker/dist/main.css";
 
