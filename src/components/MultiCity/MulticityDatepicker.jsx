@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import PropTypes from "prop-types";
 import { SingleDatePicker } from "react-google-flight-datepicker";
 
 import "react-google-flight-datepicker/dist/main.css";
 
-const MulticityDatepicker = () => {
+export const MulticityDatepicker = ({ onDateChange }) => {
   const [selectedDates, setSelectedDates] = useState({
     startDate: new Date(),
     endDate: new Date(),
@@ -11,6 +12,7 @@ const MulticityDatepicker = () => {
 
   const handleDateChange = (startDate, endDate) => {
     setSelectedDates({ startDate, endDate });
+    onDateChange(startDate, endDate);
   };
 
   return (
@@ -32,5 +34,6 @@ const MulticityDatepicker = () => {
     </div>
   );
 };
-
-export default MulticityDatepicker;
+MulticityDatepicker.propTypes = {
+  onDateChange: PropTypes.func.isRequired,
+};

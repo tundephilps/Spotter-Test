@@ -1,9 +1,8 @@
-import React from "react";
 import { useState } from "react";
-
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import PropTypes from 'prop-types';
 
-const ClassSelector = () => {
+export const ClassSelector = ({ onClassChange }) => {
   const [selectedOption, setSelectedOption] = useState("Economy");
   const [isOpen, setIsOpen] = useState(false);
 
@@ -12,7 +11,9 @@ const ClassSelector = () => {
   const handleOptionClick = (option) => {
     setSelectedOption(option);
     setIsOpen(false);
+    onClassChange(option); // Pass the selected class back to the parent component
   };
+
   return (
     <div className="relative w-48">
       {/* Dropdown Button */}
@@ -50,4 +51,6 @@ const ClassSelector = () => {
   );
 };
 
-export default ClassSelector;
+ClassSelector.propTypes = {
+  onClassChange: PropTypes.func.isRequired,
+};

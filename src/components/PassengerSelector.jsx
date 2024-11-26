@@ -1,22 +1,27 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FaChevronDown, FaChevronUp, FaUser } from "react-icons/fa";
+import PropTypes from "prop-types";
 
-function PassengerSelector() {
+function PassengerSelector({ onPassengerChange }) {
   const [isOpen, setIsOpen] = useState(false);
   const [counts, setCounts] = useState({
-    adults: 3,
-    children: 2,
-    infantsInSeat: 1,
-    infantsOnLap: 2,
+    adults: 1,
+    children: 0,
+    infantsInSeat: 0,
+    infantsOnLap: 0,
   });
 
   const increment = (key) => {
-    setCounts({ ...counts, [key]: counts[key] + 1 });
+    const newCounts = { ...counts, [key]: counts[key] + 1 };
+    setCounts(newCounts);
+    onPassengerChange(newCounts);
   };
 
   const decrement = (key) => {
     if (counts[key] > 0) {
-      setCounts({ ...counts, [key]: counts[key] - 1 });
+      const newCounts = { ...counts, [key]: counts[key] - 1 };
+      setCounts(newCounts);
+      onPassengerChange(newCounts);
     }
   };
 
@@ -133,7 +138,10 @@ function PassengerSelector() {
           {/* Footer */}
           <div className="flex justify-between border-t p-4">
             <button className="text-blue-500">Cancel</button>
-            <button className="bg-blue-500 text-white px-4 py-2 rounded-md">
+            <button
+              className="bg-blue-500 text-white px-4 py-2 rounded-md"
+              onClick={() => setIsOpen(false)}
+            >
               Done
             </button>
           </div>
@@ -142,5 +150,7 @@ function PassengerSelector() {
     </div>
   );
 }
-
+PassengerSelector.propTypes = {
+  onPassengerChange: PropTypes.func.isRequired,
+};
 export default PassengerSelector;

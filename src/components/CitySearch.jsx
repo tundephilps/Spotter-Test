@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { IoMdAirplane, IoMdSwap } from "react-icons/io";
-import { IoCloseCircle } from "react-icons/io5";
+// import { IoCloseCircle } from "react-icons/io5";
 
 export const CitySearch = () => {
-  const [cities, setCities] = useState([
+  const [cities] = useState([
     { city: "Brisbane", code: "BNE", country: "Australia" },
     { city: "Bali (Denpasar)", code: "DPS", country: "Indonesia" },
     { city: "Barcelona", code: "BCN", country: "Spain" },
