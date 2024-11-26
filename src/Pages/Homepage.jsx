@@ -1,4 +1,4 @@
-import Flight from "../assets/Flight.jpg";
+import Flight from "../assets/flight.jpg";
 import React, { useState } from "react";
 import TripSelector from "../components/TripSelector";
 import PassengerSelector from "../components/PassengerSelector";
