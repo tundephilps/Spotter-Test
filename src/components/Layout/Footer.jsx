@@ -24,10 +24,7 @@ export default () => {
       <div className="max-w-screen-xl mx-auto px-4 text-gray-600 md:px-8">
         <div className="space-y-6 sm:max-w-md sm:mx-auto sm:text-center">
           <img src={Logo} className="w-32 sm:mx-auto" />
-          <p>
-            Nulla auctor metus vitae lectus iaculis, vel euismod massa
-            efficitur.
-          </p>
+          <p>Your Number 1 travel flight destination.</p>
           <div className="items-center gap-x-3 space-y-3 sm:flex sm:justify-center sm:space-y-0">
             <a
               href="javascript:void(0)"

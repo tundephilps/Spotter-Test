@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import Logo from "../../assets/Logo.png";
 
 import Face from "../../assets/Face.jpg";
+import { Link } from "react-router-dom";
 
 // Profile Dropdown
 const ProfileDropDown = (props) => {
@@ -71,9 +72,9 @@ export default () => {
     <nav className="bg-white border-b">
       <div className="flex items-center space-x-8 py-3 px-4 max-w-screen-xl mx-auto md:px-8">
         <div className="flex-none lg:flex-initial">
-          <a href="javascript:void(0)">
+          <Link to="/">
             <img src={Logo} width={120} height={50} alt="Float UI logo" />
-          </a>
+          </Link>
         </div>
         <div className="flex-1 flex items-center justify-between">
           <div
